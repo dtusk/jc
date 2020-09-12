@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-configmap
+data:
+  POSTGRES_DB: just_cars_development
+  POSTGRES_USER: just_cars
+  POSTGRES_PASSWORD: just_cars

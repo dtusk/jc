@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2beta7
+kind: Config
+metadata:
+  name: just-cars
+build:
+  artifacts:
+  - image: dtusk/just_cars
+    docker:
+      dockerfile: Dockerfile.dev
+    sync:
+      infer:
+        - "app/**/*.rb"
+        - "config/routes.rb"
+  local:
+    push: false

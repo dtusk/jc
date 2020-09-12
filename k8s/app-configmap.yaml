@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-configmap
+data:
+  BINDING: '0.0.0.0'
+  HOST_URL: http://local.justcars.pl
+  DB_HOST: db
+  DB_USER: just_cars
+  DB_PASSWORD: just_cars
+  DB_DATABASE: just_cars_development
+  DB_PORT: '5432'

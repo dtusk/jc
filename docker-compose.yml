@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    env_file: .env.development
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    links:
+      - db
+      - app-db-migrate
+  app-db-migrate:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    env_file: .env.development
+    command: ['bin/wait_for_db.sh', 'app', 'bin/rails db:migrate']
+    links:
+      - db
+  db:
+    image: postgres:12.1-alpine
+    env_file: .env.development
+    ports:
+      - "5432:5432"
