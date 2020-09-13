@@ -1,0 +1,22 @@
+{
+  "errors" : [
+    {
+      "status" : "422",
+      "source" : {
+        "pointer" : ""
+      },
+      "title" : "Unprocessable Entity",
+      "detail" : "Image type must be one of: image/jpeg, image/png, image/webp",
+      "code" : "type_must_be_one_of_image_jpeg_image_png_image_webp"
+    },
+    {
+      "status" : "422",
+      "source" : {
+        "pointer" : "/data/attributes/title"
+      },
+      "title" : "Unprocessable Entity",
+      "detail" : "Title can't be blank",
+      "code" : "blank"
+    }
+  ]
+}

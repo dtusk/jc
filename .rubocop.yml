@@ -1,0 +1,38 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/*'
+    - 'tmp/**/*'
+    - 'bin/*'
+
+Style/Documentation:
+  Enabled: false
+  
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+# There is currently a bug with forcing to have Rails.root.join('paths/to')
+Rails/FilePath:
+  Enabled: false
+
+# This doesn't care if its an ActiveRecord or not. it switches from find_by_id to find_by(id) of a service
+Rails/DynamicFindBy:
+  Enabled: false
+  
+RSpec/ContextWording:
+  Exclude:
+    - 'spec/support/**/*'
+
+RSpec/ExampleLength:
+  Max: 20
+  
+RSpec/MultipleExpectations:
+  Max: 5

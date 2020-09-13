@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        car:
+          attributes:
+            image:
+              "type must be one of: image/jpeg, image/png, image/webp": "type must be one of: image/jpeg, image/png, image/webp"
