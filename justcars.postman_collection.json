@@ -175,6 +175,78 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "update valid car",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"attributes\": {\n            \"title\": \"Sprzedam John\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/cars/{{car_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"cars",
+								"{{car_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update invalid car",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"attributes\": {\n            \"price\": -1.0\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/cars/{{car_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"cars",
+								"{{car_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete car",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/cars/{{car_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"cars",
+								"{{car_id}}"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
